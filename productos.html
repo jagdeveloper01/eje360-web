@@ -1,9 +1,130 @@
-<footer class="border-t py-10">
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos | EJE 360 - Soluciones de Empaque</title>
 
-<div class="max-w-7xl mx-auto px-6 text-center text-sm text-gray-500">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
 
-© 2026 EJE 360 — Soluciones de Empaque
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass-nav { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); }
+    </style>
+</head>
 
-</div>
+<body class="bg-white text-slate-800 antialiased">
 
-</footer>
+    <header class="fixed w-full top-0 z-50 border-b glass-nav">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="transition-transform hover:scale-105">
+                <img src="images/logo/eje360-logo.png" alt="EJE 360 Logo" class="h-10">
+            </a>
+            <nav class="hidden md:flex gap-8 text-sm font-semibold text-slate-600">
+                <a href="productos.html" class="text-blue-600 font-bold">Productos</a>
+                <a href="soluciones.html" class="hover:text-blue-600 transition-colors">Soluciones</a>
+                <a href="nosotros.html" class="hover:text-blue-600 transition-colors">Nosotros</a>
+                <a href="contacto.html" class="hover:text-blue-600 transition-colors">Contacto</a>
+            </nav>
+            <a href="contacto.html" class="bg-blue-600 text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-blue-700 transition-all">
+                Cotizar ahora
+            </a>
+        </div>
+    </header>
+
+    <section class="pt-32 pb-12 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <nav class="flex text-sm text-slate-500 mb-4" aria-label="Breadcrumb">
+                <a href="index.html" class="hover:text-blue-600">Inicio</a>
+                <span class="mx-2">/</span>
+                <span class="text-slate-900 font-medium">Productos</span>
+            </nav>
+            <h1 class="text-4xl font-extrabold text-slate-900">Catálogo de Productos</h1>
+            <p class="mt-4 text-lg text-slate-600 max-w-2xl">
+                Explora nuestra gama de empaques de alta calidad. Diseñados para proteger tus productos y potenciar tu marca.
+            </p>
+        </div>
+    </section>
+
+    <main class="py-12 max-w-7xl mx-auto px-6">
+        
+        <div class="flex flex-wrap gap-3 mb-12">
+            <button class="px-6 py-2 rounded-full bg-blue-600 text-white font-medium shadow-md">Todos</button>
+            <button class="px-6 py-2 rounded-full bg-white border border-slate-200 text-slate-600 hover:border-blue-500 hover:text-blue-600 transition-all">Bolsas</button>
+            <button class="px-6 py-2 rounded-full bg-white border border-slate-200 text-slate-600 hover:border-blue-500 hover:text-blue-600 transition-all">Cajas</button>
+            <button class="px-6 py-2 rounded-full bg-white border border-slate-200 text-slate-600 hover:border-blue-500 hover:text-blue-600 transition-all">Ecommerce</button>
+            <button class="px-6 py-2 rounded-full bg-white border border-slate-200 text-slate-600 hover:border-blue-500 hover:text-blue-600 transition-all">Food Service</button>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="group border border-slate-100 rounded-2xl overflow-hidden hover:shadow-2xl transition-all bg-white">
+                <div class="aspect-square bg-slate-100 relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1544816155-12df9643f363" alt="Bolsas Kraft" class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500">
+                    <span class="absolute top-4 left-4 bg-green-500 text-white text-[10px] font-bold px-2 py-1 rounded uppercase">Ecológico</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Bolsas Kraft Premium</h3>
+                    <p class="text-slate-600 text-sm mb-4">Ideales para retail y boutiques. Disponibles en múltiples tamaños y gramajes.</p>
+                    <ul class="text-xs text-slate-500 space-y-2 mb-6">
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></span> 100% Reciclable</li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></span> Impresión personalizada</li>
+                    </ul>
+                    <a href="contacto.html" class="block text-center bg-slate-900 text-white py-3 rounded-xl font-semibold hover:bg-blue-600 transition-colors">Cotizar Producto</a>
+                </div>
+            </div>
+
+            <div class="group border border-slate-100 rounded-2xl overflow-hidden hover:shadow-2xl transition-all bg-white">
+                <div class="aspect-square bg-slate-100 relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1595079676339-1534802ad6cf" alt="Cajas para pizza" class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500">
+                    <span class="absolute top-4 left-4 bg-blue-500 text-white text-[10px] font-bold px-2 py-1 rounded uppercase">Popular</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Cajas Food Service</h3>
+                    <p class="text-slate-600 text-sm mb-4">Estructura térmica y resistente para transporte de alimentos.</p>
+                    <ul class="text-xs text-slate-500 space-y-2 mb-6">
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></span> Grado alimenticio</li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></span> Armado rápido</li>
+                    </ul>
+                    <a href="contacto.html" class="block text-center bg-slate-900 text-white py-3 rounded-xl font-semibold hover:bg-blue-600 transition-colors">Cotizar Producto</a>
+                </div>
+            </div>
+
+            <div class="group border border-slate-100 rounded-2xl overflow-hidden hover:shadow-2xl transition-all bg-white">
+                <div class="aspect-square bg-slate-100 relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f" alt="Cajas Ecommerce" class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-500">
+                    <span class="absolute top-4 left-4 bg-purple-500 text-white text-[10px] font-bold px-2 py-1 rounded uppercase">Resistente</span>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Cajas para Ecommerce</h3>
+                    <p class="text-slate-600 text-sm mb-4">Cartón corrugado de alta resistencia para envíos nacionales.</p>
+                    <ul class="text-xs text-slate-500 space-y-2 mb-6">
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></span> Doble corrugado</li>
+                        <li class="flex items-center"><span class="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></span> Varios calibres</li>
+                    </ul>
+                    <a href="contacto.html" class="block text-center bg-slate-900 text-white py-3 rounded-xl font-semibold hover:bg-blue-600 transition-colors">Cotizar Producto</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-12 mt-20">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="mb-6">
+                <img src="images/logo/eje360-logo.png" alt="EJE 360" class="h-8 mx-auto brightness-0 invert opacity-50">
+            </div>
+            <p class="text-sm">© 2026 EJE 360 — Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
