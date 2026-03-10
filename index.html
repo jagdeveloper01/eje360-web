@@ -25,10 +25,11 @@ font-family:'Inter',sans-serif;
 <header class="border-b">
 <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
-<h1 class="text-2xl font-bold text-gray-900">
-EJE 360
-</h1>
-
+<img 
+src="/images/logo/eje360-logo.png"
+alt="EJE 360"
+class="h-10"
+/>
 <nav class="hidden md:flex gap-8 text-sm font-medium">
 <a href="#productos" class="hover:text-blue-600">Productos</a>
 <a href="#soluciones" class="hover:text-blue-600">Soluciones</a>
@@ -37,7 +38,39 @@ EJE 360
 </nav>
 
 <a href="#contacto" class="bg-blue-600 text-white px-5 py-2 rounded-lg text-sm hover:bg-blue-700">
+<form class="mt-10 grid gap-4">
+
+<input 
+type="text"
+placeholder="Nombre"
+class="border p-3 rounded-lg"
+/>
+
+<input 
+type="email"
+placeholder="Correo"
+class="border p-3 rounded-lg"
+/>
+
+<input 
+type="text"
+placeholder="Empresa"
+class="border p-3 rounded-lg"
+/>
+
+<textarea
+placeholder="¿Qué tipo de empaque necesitas?"
+class="border p-3 rounded-lg"
+rows="4"
+></textarea>
+
+<button
+class="bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700"
+>
 Solicitar cotización
+</button>
+
+</form>
 </a>
 
 </div>
@@ -221,6 +254,14 @@ Contactar por correo
 </div>
 
 </footer>
-
+<a 
+href="https://wa.me/50371635103"
+class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition"
+target="_blank"
+>
+<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+<path d="M20.52 3.48A11.82 11.82 0 0012.05 0C5.41 0 .01 5.4 0 12.04c0 2.12.55 4.19 1.59 6.02L0 24l6.09-1.59a11.97 11.97 0 005.96 1.52h.01c6.64 0 12.04-5.4 12.04-12.04 0-3.21-1.25-6.23-3.48-8.41z"/>
+</svg>
+</a>
 </body>
 </html>
