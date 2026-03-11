@@ -1,238 +1,202 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>EJE 360 | Soluciones de Empaque</title>
-
-<script src="https://cdn.tailwindcss.com"></script>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-body{
-font-family:'Inter',sans-serif;
-}
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eje cb 360 | Soluciones de Empaque</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ejeBlue: '#1e40af',
+                        ejeOrange: '#f97316',
+                        ejeGreen: '#16a34a',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-
 <body class="bg-white text-gray-800">
 
-<!-- NAVBAR -->
-<header class="border-b">
-<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <nav class="fixed w-full z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <img class="h-12 w-auto" src="https://eje-360.com/images/logo/eje360-logo.png" alt="Eje cb 360 Logo">
+                </div>
+                
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-gray-700 hover:text-ejeBlue font-medium transition">Inicio</a>
+                    <a href="productos.html" class="text-gray-700 hover:text-ejeBlue font-medium transition">Productos</a>
+                    <a href="soluciones.html" class="text-gray-700 hover:text-ejeBlue font-medium transition">Nosotros</a>
+                    <a href="contacto.html" class="text-gray-700 hover:text-ejeBlue font-medium transition">Contacto</a>
+                </div>
 
-<a href="index.html">
-<img src="images/logo/eje360-logo.png" alt="EJE 360" class="h-10">
-</a>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 pt-2 pb-4 space-y-1">
+            <a href="index.html" class="block px-3 py-2 text-gray-700 hover:bg-gray-50">Inicio</a>
+            <a href="productos.html" class="block px-3 py-2 text-gray-700 hover:bg-gray-50">Productos</a>
+            <a href="soluciones.html" class="block px-3 py-2 text-gray-700 hover:bg-gray-50">Nosotros</a>
+            <a href="contacto.html" class="block px-3 py-2 text-gray-700 hover:bg-gray-50">Contacto</a>
+        </div>
+    </nav>
 
-<nav class="hidden md:flex gap-8 text-sm font-medium">
-<a href="productos.html" class="hover:text-blue-600">Productos</a>
-<a href="soluciones.html" class="hover:text-blue-600">Soluciones</a>
-<a href="nosotros.html" class="hover:text-blue-600">Nosotros</a>
-<a href="contacto.html" class="hover:text-blue-600">Contacto</a>
-</nav>
+    <section class="relative bg-gradient-to-br from-blue-600 to-blue-800 text-white pt-32 pb-20 lg:pt-48 lg:pb-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-4xl lg:text-6xl font-bold mb-6 leading-tight">Soluciones de Empaque para tu Negocio</h1>
+                    <p class="text-xl mb-8 text-blue-100">Vasos, cubiertos, platos y productos personalizados de la más alta calidad. Todo lo que necesitas para destacar.</p>
+                    
+                    <div class="flex flex-wrap gap-4 mb-12">
+                        <a href="productos.html" class="bg-white text-blue-700 px-8 py-3 rounded-md font-bold hover:bg-gray-100 transition flex items-center gap-2">
+                            Ver Catálogo <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="contacto.html" class="border-2 border-white text-white px-8 py-3 rounded-md font-bold hover:bg-white/10 transition">
+                            Contactar Ahora
+                        </a>
+                    </div>
 
-<a href="contacto.html" class="bg-blue-600 text-white px-5 py-2 rounded-lg text-sm hover:bg-blue-700">
-Solicitar cotización
-</a>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="flex items-center gap-2 text-sm">
+                            <i class="fas fa-check-circle text-green-400"></i> Alta calidad y durabilidad
+                        </div>
+                        <div class="flex items-center gap-2 text-sm">
+                            <i class="fas fa-check-circle text-green-400"></i> Opciones ecológicas
+                        </div>
+                        <div class="flex items-center gap-2 text-sm">
+                            <i class="fas fa-check-circle text-green-400"></i> Personalización con marca
+                        </div>
+                        <div class="flex items-center gap-2 text-sm">
+                            <i class="fas fa-check-circle text-green-400"></i> Entrega en El Salvador
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1769355104335-acef3aa4c9b6?auto=format&fit=crop&q=80&w=1080" alt="Packaging supplies" class="rounded-2xl shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
 
-</div>
-</header>
+    <section class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">¿Por Qué Elegirnos?</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Somos tu socio estratégico en suministros para restaurantes y eventos.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6 text-blue-600">
+                        <i class="fas fa-star text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-3">Calidad Garantizada</h3>
+                    <p class="text-gray-600 text-sm">Productos que resisten el uso rudo en hostelería.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6 text-blue-600">
+                        <i class="fas fa-dollar-sign text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-3">Precios de Mayoreo</h3>
+                    <p class="text-gray-600 text-sm">Optimizamos tus costos sin sacrificar la presentación.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6 text-blue-600">
+                        <i class="fas fa-palette text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-3">Personalización</h3>
+                    <p class="text-gray-600 text-sm">Imprimimos tu logo en vasos, cajas y bolsas.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6 text-blue-600">
+                        <i class="fas fa-leaf text-xl"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-3">Línea Eco-friendly</h3>
+                    <p class="text-gray-600 text-sm">Materiales biodegradables para un negocio sostenible.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- HERO -->
-<section class="py-20">
-<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+    <section class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl lg:text-4xl font-bold mb-12">Nuestros Productos</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-12">
+                <a href="productos.html" class="group block overflow-hidden rounded-xl border border-gray-100 shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1750751860244-defb08e07f00?auto=format&fit=crop&q=80&w=400" alt="Vasos" class="w-full aspect-square object-cover group-hover:scale-105 transition duration-300">
+                    <div class="p-4 bg-white"><h3 class="font-bold">Vasos</h3></div>
+                </a>
+                <a href="productos.html" class="group block overflow-hidden rounded-xl border border-gray-100 shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1600261701184-26683e392174?auto=format&fit=crop&q=80&w=400" alt="Cubiertos" class="w-full aspect-square object-cover group-hover:scale-105 transition duration-300">
+                    <div class="p-4 bg-white"><h3 class="font-bold">Cubiertos</h3></div>
+                </a>
+                <a href="productos.html" class="group block overflow-hidden rounded-xl border border-gray-100 shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1653933923644-a11f6df2ddb4?auto=format&fit=crop&q=80&w=400" alt="Platos" class="w-full aspect-square object-cover group-hover:scale-105 transition duration-300">
+                    <div class="p-4 bg-white"><h3 class="font-bold">Platos</h3></div>
+                </a>
+                <a href="productos.html" class="group block overflow-hidden rounded-xl border border-gray-100 shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1758491251924-d55fa096f649?auto=format&fit=crop&q=80&w=400" alt="Personalizados" class="w-full aspect-square object-cover group-hover:scale-105 transition duration-300">
+                    <div class="p-4 bg-white"><h3 class="font-bold">Personalizados</h3></div>
+                </a>
+            </div>
+            <a href="productos.html" class="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-3 rounded-md font-bold hover:bg-blue-700 transition">
+                Ver Catálogo Completo
+            </a>
+        </div>
+    </section>
 
-<div>
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-12 border-b border-gray-800 pb-12">
+            <div>
+                <div class="flex items-center gap-2 mb-6">
+                    <i class="fas fa-box text-blue-400 text-2xl"></i>
+                    <span class="font-bold text-xl uppercase tracking-wider">Eje cb 360</span>
+                </div>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Soluciones integrales de empaque y suministros para negocios y restaurantes en El Salvador.
+                </p>
+            </div>
+            <div>
+                <h3 class="font-bold mb-6 uppercase text-sm tracking-widest text-blue-400">Navegación</h3>
+                <ul class="space-y-3 text-gray-400 text-sm">
+                    <li><a href="index.html" class="hover:text-white transition">Inicio</a></li>
+                    <li><a href="productos.html" class="hover:text-white transition">Productos</a></li>
+                    <li><a href="soluciones.html" class="hover:text-white transition">Sobre Nosotros</a></li>
+                    <li><a href="contacto.html" class="hover:text-white transition">Contacto</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-bold mb-6 uppercase text-sm tracking-widest text-blue-400">Contacto Directo</h3>
+                <ul class="space-y-3 text-gray-400 text-sm">
+                    <li><i class="fas fa-envelope mr-2"></i> serviciosempresalescb@gmail.com</li>
+                    <li><i class="fas fa-phone mr-2"></i> +503 7163 5103</li>
+                    <li><i class="fas fa-globe mr-2"></i> eje-360.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center pt-8 text-gray-500 text-xs">
+            &copy; 2026 Eje cb 360. Todos los derechos reservados.
+        </div>
+    </footer>
 
-<h1 class="text-4xl md:text-5xl font-bold leading-tight text-gray-900">
-Soluciones de empaque para tu negocio
-</h1>
-
-<p class="mt-6 text-lg text-gray-600">
-En <strong>EJE 360</strong> ofrecemos soluciones de empaque para restaurantes,
-tiendas, ecommerce y empresas que buscan mejorar la presentación de sus productos.
-</p>
-
-<div class="mt-8 flex gap-4">
-
-<a href="contacto.html" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700">
-Solicitar cotización
-</a>
-
-<a href="productos.html" class="border px-6 py-3 rounded-lg hover:bg-gray-50">
-Ver productos
-</a>
-
-</div>
-
-</div>
-
-<div>
-<img src="https://images.unsplash.com/photo-1586880244386-8b3e34d6c9f4" class="rounded-2xl shadow-lg">
-</div>
-
-</div>
-</section>
-
-<!-- PRODUCTOS -->
-<section class="bg-gray-50 py-20">
-
-<div class="max-w-7xl mx-auto px-6">
-
-<h1 class="text-3xl font-bold text-center">
-Nuestros productos
-</h1>
-
-<p class="text-center text-gray-600 mt-3">
-Soluciones de empaque diseñadas para diferentes tipos de negocio
-</p>
-
-<div class="grid md:grid-cols-3 gap-10 mt-12">
-
-<div class="bg-white p-6 rounded-xl shadow-sm">
-<h3 class="text-xl font-semibold mb-2">Bolsas</h3>
-<p class="text-gray-600">
-Bolsas de papel y plástico para tiendas, restaurantes y delivery.
-</p>
-</div>
-
-<div class="bg-white p-6 rounded-xl shadow-sm">
-<h3 class="text-xl font-semibold mb-2">Cajas</h3>
-<p class="text-gray-600">
-Cajas resistentes ideales para alimentos, productos y envíos.
-</p>
-</div>
-
-<div class="bg-white p-6 rounded-xl shadow-sm">
-<h3 class="text-xl font-semibold mb-2">Empaque personalizado</h3>
-<p class="text-gray-600">
-Diseño de empaques con la identidad de tu marca.
-</p>
-</div>
-
-</div>
-
-</div>
-</section>
-
-<!-- SOLUCIONES -->
-<section id="soluciones" class="py-20">
-
-<div class="max-w-7xl mx-auto px-6">
-
-<h3 class="text-3xl font-bold text-center">
-Soluciones para empresas
-</h3>
-
-<div class="grid md:grid-cols-3 gap-8 mt-12">
-
-<div class="border rounded-xl p-6">
-<h4 class="font-semibold text-lg mb-2">
-Restaurantes
-</h4>
-<p class="text-gray-600">
-Empaques para delivery y comida para llevar.
-</p>
-</div>
-
-<div class="border rounded-xl p-6">
-<h4 class="font-semibold text-lg mb-2">
-Tiendas
-</h4>
-<p class="text-gray-600">
-Bolsas y empaques para retail y comercio.
-</p>
-</div>
-
-<div class="border rounded-xl p-6">
-<h4 class="font-semibold text-lg mb-2">
-Ecommerce
-</h4>
-<p class="text-gray-600">
-Soluciones de embalaje para envíos y logística.
-</p>
-</div>
-
-</div>
-
-</div>
-</section>
-
-<!-- NOSOTROS -->
-<section id="nosotros" class="bg-gray-50 py-20">
-
-<div class="max-w-5xl mx-auto px-6 text-center">
-
-<h3 class="text-3xl font-bold">
-Sobre EJE 360
-</h3>
-
-<p class="mt-6 text-gray-600 leading-relaxed">
-Somos una empresa enfocada en ofrecer soluciones de empaque
-para negocios que buscan mejorar la presentación de sus productos,
-optimizar su logística y fortalecer su marca.
-</p>
-
-</div>
-
-</section>
-
-<!-- CONTACTO -->
-<section class="py-20">
-
-<div class="max-w-4xl mx-auto px-6 text-center">
-
-<h1 class="text-3xl font-bold">
-Solicita una cotización
-</h1>
-
-<p class="text-gray-600 mt-3">
-Nuestro equipo puede ayudarte a encontrar el empaque ideal para tu negocio.
-</p>
-
-<form class="mt-10 grid gap-4 text-left">
-
-<input type="text" placeholder="Nombre" class="border p-3 rounded-lg">
-
-<input type="email" placeholder="Correo" class="border p-3 rounded-lg">
-
-<input type="text" placeholder="Empresa" class="border p-3 rounded-lg">
-
-<textarea placeholder="¿Qué tipo de empaque necesitas?" class="border p-3 rounded-lg" rows="4"></textarea>
-
-<button class="bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700">
-Solicitar cotización
-</button>
-
-</form>
-
-</div>
-
-</section>
-
-<!-- FOOTER -->
-<footer class="border-t py-10">
-
-<div class="max-w-7xl mx-auto px-6 text-center text-sm text-gray-500">
-
-© 2026 EJE 360 — Soluciones de Empaque
-
-</div>
-
-</footer>
-<a 
-href="https://wa.me/50371635103"
-class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition"
-target="_blank"
->
-<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
-<path d="M20.52 3.48A11.82 11.82 0 0012.05 0C5.41 0 .01 5.4 0 12.04c0 2.12.55 4.19 1.59 6.02L0 24l6.09-1.59a11.97 11.97 0 005.96 1.52h.01c6.64 0 12.04-5.4 12.04-12.04 0-3.21-1.25-6.23-3.48-8.41z"/>
-</svg>
-</a>
+    <script>
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
