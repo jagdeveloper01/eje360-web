@@ -1,256 +1,61 @@
-<!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto | Eje 360 - Soluciones de Empaque</title>
+<!-- EMAILJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
-    <!-- Evitar error de manifest.json 499 -->
-    <link rel="manifest" href="data:application/json,{}">
+<script>
+(function(){
+  emailjs.init("YTBxrRU17QlmMZ0BG"); // 
+})();
+</script>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    
-    <!-- EMAILJS SDK -->
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-    <script>
-        (function(){
-            emailjs.init("YTBxrRU17QlmMZ0BG");
-        })();
-    </script>
+<script>
+const contactForm = document.getElementById('contact-form');
+const submitBtn = document.getElementById('submit-btn');
+const btnText = document.getElementById('btn-text');
+const btnLoader = document.getElementById('btn-loader');
+const formContent = document.getElementById('form-content');
+const successScreen = document.getElementById('success-screen');
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        ejeBlue: '#1e40af',
-                        ejeBlueDark: '#1e3a8a',
-                        ejeOrange: '#f97316',
-                        ejeGreen: '#16a34a',
-                    },
-                    fontFamily: {
-                        montserrat: ['Montserrat', 'sans-serif'],
-                        opensans: ['Open Sans', 'sans-serif']
-                    },
-                    animation: {
-                        'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
-                        'pop-in': 'popIn 0.5s cubic-bezier(0.26, 0.53, 0.74, 1.48) forwards'
-                    },
-                    keyframes: {
-                        fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(20px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' }
-                        },
-                        popIn: {
-                            '0%': { opacity: '0', transform: 'scale(0.5)' },
-                            '100%': { opacity: '1', transform: 'scale(1)' }
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body { font-family: 'Open Sans', sans-serif; }
-        h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; }
-        .glass-nav { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); }
-        
-        .loader {
-            border-top-color: #ffffff;
-            animation: spinner 0.8s linear infinite;
-        }
-        @keyframes spinner {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    </style>
-</head>
+contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
 
-<body class="bg-white text-gray-800 antialiased">
+    // 🔒 Validación básica
+    if (!contactForm.email.value.includes("@")) {
+        alert("Correo inválido");
+        return;
+    }
 
-    <!-- HEADER -->
-    <nav class="fixed w-full z-50 bg-white shadow-md glass-nav border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
-                <div class="flex-shrink-0 flex items-center">
-                    <a href="index.html">
-                        <img class="h-12 w-auto" src="https://eje-360.com/images/logo/logo+texto.png" alt="Eje 360 Logo">
-                    </a>
-                </div>
-                
-                <div class="hidden md:flex space-x-8 items-center font-opensans">
-                    <a href="index.html" class="text-gray-700 hover:text-ejeBlue font-medium transition">Inicio</a>
-                    <a href="index.html" class="text-gray-700 hover:text-ejeBlue font-medium transition">Productos</a>
-                    <a href="soluciones.html" class="text-gray-700 hover:text-ejeBlue font-medium transition">Nosotros</a>
-                    <a href="contacto.html" class="text-ejeBlue font-bold border-b-2 border-ejeBlue py-1">Contacto</a>
-                </div>
+    submitBtn.disabled = true;
+    btnText.textContent = "Enviando...";
+    btnLoader.classList.remove('hidden');
 
-                <div class="hidden md:block">
-                    <a href="https://wa.me/50371635103" class="bg-ejeBlue text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-ejeBlueDark transition-all shadow-md">
-                        Cotizar por WhatsApp
-                    </a>
-                </div>
+    emailjs.send("service_ocaw127", "template_2q8vjdu", {
+        name: contactForm.name.value,
+        phone: contactForm.phone.value,
+        email: contactForm.email.value,
+        product: contactForm.product.value,
+        message: contactForm.message.value
+    })
+    .then(() => {
+        showSuccess();
+    })
+    .catch((error) => {
+        console.error("EmailJS error:", error);
+        btnText.textContent = "Error al enviar";
+        submitBtn.disabled = false;
+        btnLoader.classList.add('hidden');
 
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-button" class="text-gray-700 hover:text-ejeBlue focus:outline-none">
-                        <i class="fas fa-bars text-2xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </nav>
+        setTimeout(() => {
+            btnText.textContent = "Reintentar";
+        }, 3000);
+    });
+});
 
-    <!-- HERO -->
-    <section class="pt-32 pb-12 bg-gradient-to-b from-gray-50 to-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">Contacto</h1>
-            <p class="text-lg text-gray-600 max-w-2xl font-opensans">Envíanos tus dudas o solicita una cotización personalizada con EmailJS.</p>
-        </div>
-    </section>
+function showSuccess() {
+    formContent.classList.add('opacity-0', 'scale-95');
 
-    <!-- FORMULARIO E INFO -->
-    <main class="max-w-7xl mx-auto px-6 py-12">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            
-            <!-- INFO LADO IZQUIERDO -->
-            <div class="space-y-8 animate-fade-in-up">
-                <div class="bg-blue-50 p-8 rounded-3xl border border-blue-100">
-                    <h3 class="text-ejeBlue font-bold text-xl mb-4">Canales de Atención</h3>
-                    <div class="space-y-6">
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-ejeBlue shadow-sm">
-                                <i class="fab fa-whatsapp text-2xl"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs text-gray-400 font-bold uppercase">WhatsApp</p>
-                                <p class="font-bold text-gray-800">+503 7163 5103</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center text-ejeBlue shadow-sm">
-                                <i class="fas fa-envelope text-xl"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs text-gray-400 font-bold uppercase">Correo</p>
-                                <p class="font-bold text-gray-800">ventas@eje-360.com</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- FORMULARIO LADO DERECHO -->
-            <div class="bg-white rounded-3xl p-8 md:p-12 shadow-2xl border border-gray-100 relative min-h-[550px] flex flex-col justify-center overflow-hidden">
-                
-                <!-- CAPA FORMULARIO -->
-                <div id="form-content" class="transition-all duration-500">
-                    <h2 class="text-2xl font-bold mb-8">Solicitar Información</h2>
-                    
-                    <form id="contact-form">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                            <input type="text" name="name" id="name" required placeholder="Nombre" class="bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 focus:border-ejeBlue outline-none w-full">
-                            <input type="tel" name="phone" id="phone" required placeholder="WhatsApp" class="bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 focus:border-ejeBlue outline-none w-full">
-                        </div>
-                        
-                        <input type="email" name="email" id="email" required placeholder="Tu Correo Electrónico" class="bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 focus:border-ejeBlue outline-none w-full mb-6">
-                        
-                        <select name="product" id="product" class="bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 focus:border-ejeBlue outline-none w-full mb-6">
-                            <option value="Vasos para Bebidas">Vasos para Bebidas</option>
-                            <option value="Cubiertos Desechables">Cubiertos Desechables</option>
-                            <option value="Bolsas Kraft">Bolsas Kraft</option>
-                            <option value="Otros">Otros</option>
-                        </select>
-                        
-                        <textarea name="message" id="message" rows="4" required placeholder="¿En qué podemos ayudarte?" class="bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 focus:border-ejeBlue outline-none w-full mb-8 resize-none"></textarea>
-                        
-                        <button type="submit" id="submit-btn" class="w-full bg-ejeBlue text-white py-4 rounded-xl font-bold text-lg hover:bg-ejeBlueDark transition-all shadow-lg flex items-center justify-center gap-3">
-                            <span id="btn-text">Enviar Mensaje</span>
-                            <div id="btn-loader" class="hidden loader border-2 border-white border-t-transparent rounded-full h-5 w-5"></div>
-                        </button>
-                    </form>
-                </div>
-
-                <!-- PANTALLA ÉXITO -->
-                <div id="success-screen" class="hidden absolute inset-0 bg-white flex flex-col items-center justify-center text-center p-8 animate-pop-in">
-                    <div class="w-20 h-20 bg-green-500 text-white rounded-full flex items-center justify-center text-4xl mb-6 shadow-lg shadow-green-100">
-                        <i class="fas fa-check"></i>
-                    </div>
-                    <h2 class="text-3xl font-bold mb-2">¡Mensaje Enviado!</h2>
-                    <p class="text-gray-500 mb-8 px-4">Gracias por contactarnos. Nuestro equipo de ventas te contactará a la brevedad.</p>
-                    <button onclick="location.reload()" class="bg-gray-100 text-gray-700 px-6 py-2 rounded-full font-bold text-sm hover:bg-gray-200 transition">
-                        Enviar otro mensaje
-                    </button>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <script>
-        const contactForm = document.getElementById('contact-form');
-        const submitBtn = document.getElementById('submit-btn');
-        const btnText = document.getElementById('btn-text');
-        const btnLoader = document.getElementById('btn-loader');
-        const formContent = document.getElementById('form-content');
-        const successScreen = document.getElementById('success-screen');
-
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            // Validación básica de email
-            if (!contactForm.email.value.includes("@")) {
-                alert("Por favor, ingresa un correo electrónico válido.");
-                return;
-            }
-
-            // Estado visual de carga
-            submitBtn.disabled = true;
-            btnText.textContent = "Enviando...";
-            btnLoader.classList.remove('hidden');
-
-            // Parámetros para la plantilla de EmailJS
-            // Asegúrate de que los nombres de las variables coincidan con tu template en EmailJS
-            const templateParams = {
-                name: contactForm.name.value,
-                phone: contactForm.phone.value,
-                email: contactForm.email.value,
-                product: contactForm.product.value,
-                message: contactForm.message.value
-            };
-
-            emailjs.send("service_ocaw127", "template_2q8vjdu", templateParams)
-                .then(function(response) {
-                   console.log('ÉXITO!', response.status, response.text);
-                   showSuccess();
-                }, function(error) {
-                   console.error('ERROR...', error);
-                   btnText.textContent = "Error al enviar";
-                   submitBtn.disabled = false;
-                   btnLoader.classList.add('hidden');
-                   
-                   setTimeout(() => {
-                       btnText.textContent = "Reintentar";
-                   }, 3000);
-                });
-        });
-
-        function showSuccess() {
-            formContent.classList.add('opacity-0', 'scale-95');
-            setTimeout(() => {
-                formContent.classList.add('hidden');
-                successScreen.classList.remove('hidden');
-            }, 500);
-        }
-
-        // Mobile menu toggle
-        const menuBtn = document.getElementById('mobile-menu-button');
-        if(menuBtn) {
-            menuBtn.addEventListener('click', () => {
-                // Implementar lógica de menú si es necesario
-            });
-        }
-    </script>
-
-</body>
-</html>
+    setTimeout(() => {
+        formContent.classList.add('hidden');
+        successScreen.classList.remove('hidden');
+    }, 500);
+}
+</script>
