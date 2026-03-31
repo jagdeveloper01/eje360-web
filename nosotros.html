@@ -1,9 +1,248 @@
-<footer class="border-t py-10">
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros | Eje 360 - Soluciones de Empaque</title>
 
-<div class="max-w-7xl mx-auto px-6 text-center text-sm text-gray-500">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ejeBlue: '#1e40af',
+                        ejeBlueDark: '#1e3a8a',
+                        brand: {
+                            dark: '#1F3556',
+                            orange: '#F28C28',
+                            green: '#5FAF3A'
+                        }
+                    },
+                    fontFamily: {
+                        montserrat: ['Montserrat', 'sans-serif'],
+                        opensans: ['Open Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Open Sans', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; }
+        .glass-nav { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+        .text-gradient {
+            background: linear-gradient(to right, #1F3556, #1e40af);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
 
-© 2026 EJE 360 — Soluciones de Empaque
+<body class="bg-white text-gray-800 antialiased">
 
-</div>
+    <!-- NAVEGACIÓN UNIFICADA -->
+    <nav class="fixed w-full z-50 bg-white shadow-md glass-nav border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html">
+                        <img class="h-12 w-auto" src="https://eje-360.com/images/logo/logo+texto.png" alt="Eje 360 Logo">
+                    </a>
+                </div>
+                
+                <div class="hidden md:flex space-x-8 items-center text-sm">
+                    <a href="index.html" class="text-gray-700 hover:text-ejeBlue font-medium transition">Inicio</a>
+                    <a href="productos.html" class="text-gray-700 hover:text-ejeBlue font-medium transition">Productos</a>
+                    <a href="nosotros.html" class="text-ejeBlue font-bold border-b-2 border-ejeBlue py-1">Nosotros</a>
+                    <a href="contacto.html" class="text-gray-700 hover:text-ejeBlue font-medium transition">Contacto</a>
+                </div>
 
-</footer>
+                <div class="hidden md:block">
+                    <a href="https://wa.me/50371635103" class="bg-ejeBlue text-white px-6 py-2.5 rounded-full text-xs font-bold hover:bg-ejeBlueDark transition-all shadow-md">
+                        Chat WhatsApp
+                    </a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Menú Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg">
+            <div class="flex flex-col py-4">
+                <a href="index.html" class="px-6 py-3 text-gray-600">Inicio</a>
+                <a href="productos.html" class="px-6 py-3 text-gray-600">Productos</a>
+                <a href="nosotros.html" class="px-6 py-3 text-ejeBlue bg-blue-50 font-bold">Nosotros</a>
+                <a href="contacto.html" class="px-6 py-3 text-gray-600">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER ESTILO CONTACTO REPLICADO -->
+    <header class="pt-40 pb-20 px-6 text-center bg-gradient-to-b from-slate-50 to-white">
+        <div class="max-w-4xl mx-auto">
+            <span class="text-xs font-black uppercase tracking-[0.3em] text-brand-orange mb-4 block">Pasión por el Empaque</span>
+            <h1 class="text-4xl md:text-6xl font-extrabold text-brand-dark mb-6 tracking-tight leading-tight">
+                Impulsamos tu marca <br class="hidden md:block"> con soluciones <span class="text-ejeBlue">360°</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed font-opensans">
+                Más que suministros, somos el aliado estratégico que cuida la imagen de tu negocio en cada detalle.
+            </p>
+        </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL: NOSOTROS -->
+    <main class="max-w-7xl mx-auto px-6 py-20">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-32">
+            <!-- Texto Nosotros -->
+            <div class="space-y-8">
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-ejeBlue rounded-full text-xs font-bold uppercase tracking-wider">
+                    <i class="fas fa-lightbulb"></i> Nuestra Historia
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-dark leading-snug">
+                    Nacemos con una idea clara: soluciones prácticas y accesibles.
+                </h2>
+                <div class="space-y-6 text-gray-600 text-lg leading-relaxed">
+                    <p>
+                        En Eje 360, nacemos con el objetivo de ofrecer soluciones de empaque de alta calidad para negocios que quieren crecer y proyectar una mejor imagen ante sus clientes.
+                    </p>
+                    <p>
+                        Trabajamos de forma cercana, entendiendo lo que cada cliente necesita y cuidando cada detalle para que su marca destaque en un mercado competitivo.
+                    </p>
+                    <p class="font-semibold text-brand-dark italic border-l-4 border-brand-orange pl-6 py-2">
+                        "Buscamos ser un aliado confiable en el día a día de nuestros clientes, aportando soluciones que realmente sumen a su operación."
+                    </p>
+                </div>
+            </div>
+
+            <!-- Imagen Visual Decorativa -->
+            <div class="relative">
+                <div class="absolute -top-10 -left-10 w-40 h-40 bg-brand-orange/10 rounded-full blur-3xl"></div>
+                <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-ejeBlue/10 rounded-full blur-3xl"></div>
+                <img src="https://images.unsplash.com/photo-1606857521015-7f9fdf423740?auto=format&fit=crop&q=80&w=1000" alt="Almacén de empaques profesionales" class="relative z-10 rounded-3xl shadow-2xl border border-slate-100 object-cover w-full h-[500px]">
+                
+                <!-- Badge Flotante -->
+                <div class="absolute bottom-8 left-8 z-20 bg-white p-6 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-4 animate-bounce">
+                    <div class="w-12 h-12 bg-brand-green rounded-full flex items-center justify-center text-white">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-slate-400 font-bold uppercase tracking-tighter">Calidad Garantizada</p>
+                        <p class="font-bold text-slate-800">100% Profesionales</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- VALORES / DIFERENCIADORES -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-10 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition">
+                <div class="w-14 h-14 bg-blue-50 text-ejeBlue rounded-2xl flex items-center justify-center text-2xl mb-6">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Cercanía</h3>
+                <p class="text-slate-500 leading-relaxed">
+                    No somos solo un proveedor; trabajamos codo a codo contigo para encontrar el empaque ideal para tu producto.
+                </p>
+            </div>
+            
+            <div class="bg-white p-10 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition">
+                <div class="w-14 h-14 bg-orange-50 text-brand-orange rounded-2xl flex items-center justify-center text-2xl mb-6">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Calidad Premium</h3>
+                <p class="text-slate-500 leading-relaxed">
+                    Cuidamos la resistencia, el acabado y la estética de cada suministro para proteger tu inversión y tu reputación.
+                </p>
+            </div>
+
+            <div class="bg-white p-10 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition">
+                <div class="w-14 h-14 bg-green-50 text-brand-green rounded-2xl flex items-center justify-center text-2xl mb-6">
+                    <i class="fas fa-shipping-fast"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Agilidad</h3>
+                <p class="text-slate-500 leading-relaxed">
+                    Entendemos que tu operación no se detiene. Ofrecemos tiempos de respuesta y entrega optimizados.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER UNIFICADO -->
+    <footer class="bg-slate-900 text-white pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-16 border-b border-slate-800 pb-16">
+            <div>
+                <img class="h-10 w-auto mb-8 brightness-0 invert" src="https://eje-360.com/images/logo/logo+texto.png" alt="Eje 360 Logo">
+                <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                    Líderes en soluciones integrales de empaque y suministros para negocios en El Salvador. Elevamos la presencia de tu marca.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-ejeBlue transition"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-ejeBlue transition"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-bold mb-8 text-white uppercase tracking-widest text-sm">Menú</h3>
+                <ul class="space-y-4 text-slate-400 text-sm">
+                    <li><a href="index.html" class="hover:text-white transition">Inicio</a></li>
+                    <li><a href="productos.html" class="hover:text-white transition">Catálogo</a></li>
+                    <li><a href="nosotros.html" class="text-white font-bold">Nosotros</a></li>
+                    <li><a href="contacto.html" class="hover:text-white transition">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-bold mb-8 text-white uppercase tracking-widest text-sm">Contáctanos</h3>
+                <ul class="space-y-4 text-slate-400 text-sm">
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-phone text-brand-orange"></i> +503 7163 5103
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-envelope text-brand-orange"></i> ventas@eje-360.com
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fas fa-map-marker-alt text-brand-orange"></i> San Salvador, El Salvador
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 gap-4">
+            <p>&copy; 2026 Eje 360. Todos los derechos reservados.</p>
+            <div class="flex gap-6">
+                <a href="#" class="hover:text-white">Privacidad</a>
+                <a href="#" class="hover:text-white">Términos</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Lógica Menú Móvil
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Efecto Scroll Nav
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 20) {
+                nav.classList.add('py-3');
+                nav.classList.remove('py-5');
+            } else {
+                nav.classList.add('py-5');
+                nav.classList.remove('py-3');
+            }
+        });
+    </script>
+</body>
+</html>
