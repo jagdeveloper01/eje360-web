@@ -51,35 +51,32 @@
 <body class="bg-white text-gray-800 antialiased">
 
     <!-- HEADER -->
-    <nav class="fixed w-full z-50 bg-white shadow-md glass-nav border-b border-gray-100">
+ <nav class="fixed w-full z-50 bg-white shadow-md glass-nav border-b border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
                 <div class="flex-shrink-0 flex items-center">
                     <a href="index.html">
+                        <!-- Logo oficial actualizado -->
                         <img class="h-12 w-auto" src="images/logo/logo_solo_eje_360.jpeg" alt="Eje 360 Logo">
                     </a>
                 </div>
                 
-                <div class="hidden md:flex space-x-8 items-center">
+                <div class="hidden md:flex space-x-8 items-center text-sm">
                     <a href="index.html" class="text-gray-700 hover:text-ejeBlue font-medium transition">Inicio</a>
-                    <a href="productos.html" class="text-ejeBlue font-bold border-b-2 border-ejeBlue py-1">Productos</a>
-                    <a href="nosotros.html" class="text-gray-700 hover:text-ejeBlue font-medium transition">Nosotros</a>
+                    <a href="productos.html" class="text-gray-700 hover:text-ejeBlue font-medium transition">Productos</a>
+                    <a href="nosotros.html" class="text-ejeBlue font-bold border-b-2 border-ejeBlue py-1">Nosotros</a>
                     <a href="contacto.html" class="text-gray-700 hover:text-ejeBlue font-medium transition">Contacto</a>
                 </div>
 
                 <div class="hidden md:block">
-                    <a href="https://wa.me/50371635103" class="bg-ejeBlue text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-ejeBlueDark transition-all shadow-md">
-                        Cotizar por WhatsApp
+                    <a href="https://wa.me/50371635103" class="bg-ejeBlue text-white px-6 py-2.5 rounded-full text-xs font-bold hover:bg-ejeBlueDark transition-all shadow-md">
+                        Chat WhatsApp
                     </a>
                 </div>
 
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-button" class="text-gray-700 hover:text-ejeBlue transition-colors focus:outline-none">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="4" x2="20" y1="12" y2="12"></line>
-                            <line x1="4" x2="20" y1="6" y2="6"></line>
-                            <line x1="4" x2="20" y1="18" y2="18"></line>
-                        </svg>
+                    <button id="mobile-menu-button" class="text-gray-700">
+                        <i class="fas fa-bars text-2xl"></i>
                     </button>
                 </div>
             </div>
@@ -87,10 +84,10 @@
         
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg">
             <div class="flex flex-col py-4">
-                <a href="index.html" class="px-6 py-3 text-gray-600 hover:bg-gray-50">Inicio</a>
-                <a href="productos.html" class="px-6 py-3 text-ejeBlue bg-blue-50 font-bold border-r-4 border-ejeBlue">Productos</a>
-                <a href="nosotros.html" class="px-6 py-3 text-gray-600 hover:bg-gray-50">Nosotros</a>
-                <a href="contacto.html" class="px-6 py-3 text-gray-600 hover:bg-gray-50">Contacto</a>
+                <a href="index.html" class="px-6 py-3 text-gray-600">Inicio</a>
+                <a href="productos.html" class="px-6 py-3 text-gray-600">Productos</a>
+                <a href="nosotros.html" class="px-6 py-3 text-ejeBlue bg-blue-50 font-bold">Nosotros</a>
+                <a href="contacto.html" class="px-6 py-3 text-gray-600">Contacto</a>
             </div>
         </div>
     </nav>
